@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="side" class="sidenav" opened>
+    <mat-toolbar color="primary">MonApp</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Accueil</a>
+      <a mat-list-item routerLink="/messages">Messages</a>
+      <a mat-list-item routerLink="/settings">Paramètres</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="topbar">
+      <button mat-icon-button (click)="drawer.toggle()" class="menu-btn" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Page d’accueil</span>
+      <span class="spacer"></span>
+      <button mat-icon-button aria-label="Notifications">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Account">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="content">
+      <section class="hero">
+        <h1>Bienvenue sur MonApp</h1>
+        <p>Tableau de bord simple construit avec Angular Material.</p>
+        <button mat-raised-button color="accent">Commencer</button>
+      </section>
+
+      <section class="cards">
+        <mat-grid-list cols="3" rowHeight="1:1" gutterSize="16px">
+          <mat-grid-tile *ngFor="let c of cards">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>{{ c.title }}</mat-card-title>
+                <mat-card-subtitle>{{ c.subtitle }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ c.content }}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Ouvrir</button>
+                <button mat-button>Partager</button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </section>
+
+      <section class="footer">
+        <p> {{ currentYear}} MonApp</p>
+      </section>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

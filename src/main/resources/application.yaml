@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: database
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+thread:
+  executor:
+    setCorePoolSize: 3
+    setMaxPoolSize: 5
+    setQueueCapacity: 10
+    setThreadNamePrefix: LogExecutor-
+  recherche: 10
+cron:
+  message: "0 * * * * *	"
+logging:
+  file:
+    name: "myapplication.log"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
