@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MessagesInterf } from '../interfaces/messages';
 import { Observable } from 'rxjs';
+import { environment } from '../environements/environement';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessagesService {
-  private url : string = 'http://localhost:8080/api/v1'
+  private url : string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
