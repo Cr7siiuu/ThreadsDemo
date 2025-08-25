@@ -17,7 +17,7 @@ export class MessagesService {
   }
 
   public getAllMessages():Observable<MessagesInterf[]> {
-    console.log('url = ' + url);
+    console.log('url = ' + this.url);
     return this.http.get<MessagesInterf[]>(this.url+'/allMessages')
   }
 }
