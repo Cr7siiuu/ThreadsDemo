@@ -14,6 +14,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./src/multiThreadApp         
-          file: ./src/multiThreadApp/Dockerfile  
+          file: ./src/multiThreadApp/Dockerfile 
+          platforms: linux/amd64,linux/arm64
           push: true
-          tags: cr7siiuuu/web:1.0.4
+          tags: cr7siiuuu/web:1.0.7
